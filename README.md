@@ -1,12 +1,13 @@
 # GPT-2M
-## Setting Up GPT-2
+## Setting Up GPT-2M
 Instructions adapted and corrected from a Medium article found [here](https://medium.com/@ngwaifoong92/beginners-guide-to-retrain-gpt-2-117m-to-generate-custom-text-content-8bb5363d8b7f).
+See [Developers.md](./DEVELOPERS.md) for more information.
 1. Download this repo.
 1. Ensure you have Python 3.7 64bit installed.
 	* On Windows, it's helpful to check `Add Python (VERSION) to PATH`.
 	* You should also check to see if your system is linked to use `python` or `python3` in the command line to use Python 3.
 	* The version of each command can be checked with `python -V` or `python3 -V`.
-1. Open a command window in the GPT-2 Directory.
+1. Open a command window in the GPT-2M Directory.
 1. Run `$ pip install -r .\requirements.txt` ensuring that `pip` relates to the one installed for Python 3.
 	* An error can occur stating `Microsoft Visual C++ 14.0 is required`.
 		1. Scroll down to `Build Tools for Visual Studio 2019` [here](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019).
