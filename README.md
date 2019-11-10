@@ -1,58 +1,31 @@
-**Status:** Archive (code is provided as-is, no updates expected)
+# GPT-2M
+## Setting Up GPT-2
+Instructions adapted and corrected from a Medium article found [here](https://medium.com/@ngwaifoong92/beginners-guide-to-retrain-gpt-2-117m-to-generate-custom-text-content-8bb5363d8b7f).
+1. Download this repo.
+1. Ensure you have Python 3.7 64bit installed.
+	* On Windows, it's helpful to check `Add Python (VERSION) to PATH`.
+	* You should also check to see if your system is linked to use `python` or `python3` in the command line to use Python 3.
+	* The version of each command can be checked with `python -V` or `python3 -V`.
+1. Open a command window in the GPT-2 Directory.
+1. Run `$ pip install -r .\requirements.txt` ensuring that `pip` relates to the one installed for Python 3.
+	* An error can occur stating `Microsoft Visual C++ 14.0 is required`.
+		1. Scroll down to `Build Tools for Visual Studio 2019` [here](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019).
+		1. Download and run the installer.
+		1. Check off `C++ build tools` under the `Workloads` top header.
+		1. Click `Install` in the bottom right.
+		1. Restart the computer when prompted and try this step's pip command again.
+	* You may also need to run `$ pip install --upgrade setuptools` after installing the C++ Build Tools.
+1. Run `$ pip install tensorflow-gpu==1.15.0` to install the 1.15.0 (not the most recent) TensorFlow enviroment to your Python 3.7.* installation with GPU priority.
+	* Remove the `-gpu` text to install without GPU priority.
+1. Run `$ python download_model.py 774M` to download the GPT-2 data model.
+	* You should replace `python` with `python3` in all following inputs if that is how your `PATHS` are setup.
+	* You can also replace `774M` with `335M` or `124M` if you want a smaller model download file size but reduced accuracy.
+1. Run `$ python \src\interactive_conditional_samples.py --model_name 774M --top_k 40 --tempurature 0.8` to test the output.
+	* You will be prompted (after some warnings) with `Model prompt >>>`. Enter whatever text you want the system to finish here.
+		* After hitting `Enter` the program will run for a while and eventually return a text sample to the console.
+	* Hit `CTRL+C` to exit the execution.
 
-# gpt-2
-
-Code and models from the paper ["Language Models are Unsupervised Multitask Learners"](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf).
-
-You can read about GPT-2 and its staged release in our [original blog post](https://blog.openai.com/better-language-models/), [6 month follow-up post](https://openai.com/blog/gpt-2-6-month-follow-up/), and [final post](https://www.openai.com/blog/gpt-2-1-5b-release/).
-
-We have also [released a dataset](https://github.com/openai/gpt-2-output-dataset) for researchers to study their behaviors.
-
-<sup>*</sup> *Note that our original parameter counts were wrong due to an error (in our previous blog posts and paper).  Thus you may have seen small referred to as 117M and medium referred to as 345M.*
-
-## Usage
-
-This repository is meant to be a starting point for researchers and engineers to experiment with GPT-2.
-
-For basic information, see our [model card](./model_card.md).
-
-### Some caveats
-
-- GPT-2 models' robustness and worst case behaviors are not well-understood.  As with any machine-learned model, carefully evaluate GPT-2 for your use case, especially if used without fine-tuning or in safety-critical applications where reliability is important.
-- The dataset our GPT-2 models were trained on contains many texts with [biases](https://twitter.com/TomerUllman/status/1101485289720242177) and factual inaccuracies, and thus GPT-2 models are likely to be biased and inaccurate as well.
-- To avoid having samples mistaken as human-written, we recommend clearly labeling samples as synthetic before wide dissemination.  Our models are often incoherent or inaccurate in subtle ways, which takes more than a quick read for a human to notice.
-
-### Work with us
-
-Please [let us know](mailto:languagequestions@openai.com) if you’re doing interesting research with or working on applications of GPT-2!  We’re especially interested in hearing from and potentially working with those who are studying
-- Potential malicious use cases and defenses against them (e.g. the detectability of synthetic text)
-- The extent of problematic content (e.g. bias) being baked into the models and effective mitigations
-
-## Development
-
-See [DEVELOPERS.md](./DEVELOPERS.md)
-
-## Contributors
-
-See [CONTRIBUTORS.md](./CONTRIBUTORS.md)
-
-## Citation
-
-Please use the following bibtex entry:
-```
-@article{radford2019language,
-  title={Language Models are Unsupervised Multitask Learners},
-  author={Radford, Alec and Wu, Jeff and Child, Rewon and Luan, David and Amodei, Dario and Sutskever, Ilya},
-  year={2019}
-}
-```
-
-## Future work
-
-We may release code for evaluating the models on various benchmarks.
-
-We are still considering release of the larger models.
-
-## License
-
-[MIT](./LICENSE)
+## Attributions
+* Code and models from the paper ["Language Models are Unsupervised Multitask Learners"](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf).
+* GPT-2 was originally written under [OpenAI](https://github.com/openai/gpt-2).
+* Released by OpenAI under the [MIT License](./LICENSE).
