@@ -1,4 +1,13 @@
 # GPT-2M
+GPT-2M ecompasses an effort to turn OpenAI's GPT-2 developer example into something that can be used with more ease and further extend it's uses towards creative and artisitc means.
+
+## Project Goals
+- [ ] Text based menu for controlling GPT-2M
+- [ ] Support for importing starting samples from a file
+- [ ] Support for exporting generated text to a file
+- [ ] Introduce support for Tensor 2.*
+- [ ] Provide a more user friendly installation process
+
 ## Setting Up GPT-2M
 Instructions adapted and corrected from a Medium article found [here](https://medium.com/@ngwaifoong92/beginners-guide-to-retrain-gpt-2-117m-to-generate-custom-text-content-8bb5363d8b7f).
 See [Developers.md](./DEVELOPERS.md) for more information.
